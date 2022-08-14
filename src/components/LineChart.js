@@ -23,7 +23,39 @@ ChartJS.register(
 );
 
 
-;
+const LineChart = () => {
+  const [chart, setChart] = useState({})
+  var baseUrl = "https://api.coinranking.com/v2/coins/?limit=10";
+  var proxyUrl = "https://cors-anywhere.herokuapp.com/";
+  var apiKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+
+
+
+  useEffect(() => {
+    const fetchCoins = async () => {
+      await fetch(`${proxyUrl}${baseUrl}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-access-token': `${apiKey}`,
+          'Access-Control-Allow-Origin': "*"
+        }
+      })
+        .then((response) => {
+          if (response.ok) {
+            response.json().then((json) => {
+              console.log(json.data);
+              setChart(json.data)
+            });
+          }
+        }).catch((error) => {
+          console.log(error);
+        });
+    };
+    fetchCoins()
+  }, [baseUrl, proxyUrl, apiKey])
+
+  console.log("chart", chart);
   var data = {
     labels: chart?.coins?.map(x => x.name),
     datasets: [{
@@ -70,6 +102,6 @@ ChartJS.register(
       />
     </div>
   )
-
+}
 
 export default LineChart
