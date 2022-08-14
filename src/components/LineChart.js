@@ -25,7 +25,7 @@ ChartJS.register(
 
 const LineChart = () => {
   const [chart, setChart] = useState({})
-  var baseUrl = "https://api.coinranking.com/v2/coins/?limit=10";
+  var baseUrl = "https://data.nasdaq.com/api/v3/datasets/FRED/GDP";
   var proxyUrl = "https://cors-anywhere.herokuapp.com/";
   var apiKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
 
@@ -56,10 +56,11 @@ const LineChart = () => {
   }, [baseUrl, proxyUrl, apiKey])
 
   console.log("chart", chart);
+
   var data = {
     labels: chart?.coins?.map(x => x.name),
     datasets: [{
-      label: `${chart?.coins?.length} Coins Available`,
+      label: `${chart?.coins?.length} Closing price`,
       data: chart?.coins?.map(x => x.price),
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
