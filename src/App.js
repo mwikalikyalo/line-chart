@@ -1,11 +1,11 @@
 import React from 'react'
-import Navbar from './components/Navbar'
+import LineChart from './components/LineChart'
 import './App.css'
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <LineChart />
     </div>
   )
 }
