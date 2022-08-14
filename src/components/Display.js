@@ -4,7 +4,7 @@ import Navbar from './Navbar'
 
 function App() {
   return (
-    <div className="container-fluid display">
+    <div className="container-fluid">
       <div className='navbar'>
           <Navbar />
       </div> 

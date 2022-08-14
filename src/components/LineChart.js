@@ -25,7 +25,7 @@ ChartJS.register(
 
 const LineChart = () => {
   const [chart, setChart] = useState({})
-  var baseUrl = "https://data.nasdaq.com/api/v3/datasets/FRED/GDP/?limit=10";
+  var baseUrl = "https://data.nasdaq.com/api/v3/datatables/ETFG/FUND.json?ticker=SPY&api_key=YOURAPIKEY";
   var proxyUrl = "https://cors-anywhere.herokuapp.com/";
   var apiKey = "X3GzqBgru1BVNYbgjext";
 
