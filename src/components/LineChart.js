@@ -60,7 +60,7 @@ const LineChart = () => {
   var data = {
     labels: chart?.nasdaq?.map(x => x.name),
     datasets: [{
-      label: `${chart?.nasdaq?.length} Closing price`,
+      label: `Closing price`,
       data: chart?.nasdaq?.map(x => x.price),
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
@@ -97,7 +97,8 @@ const LineChart = () => {
     <div>
       <Line
         data={data}
-        height={400}
+        height={500}
+        width={500}
         options={options}
 
       />

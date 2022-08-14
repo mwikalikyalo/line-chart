@@ -16,5 +16,17 @@
 .display{
   display: flex;
   justify-content: space-between;
-  overflow: hidden;
+  overflow-y: hidden;
+}
+
+.navbar{
+  width: 40vh;
+  position: relative;
+  left: -12px;
+}
+
+.line-chart{
+  position: relative;
+  left: -25em;
+  bottom: -5em;
 }

@@ -2,9 +2,9 @@ import React from 'react'
 import LineChart from './LineChart'
 import Navbar from './Navbar'
 
-function App() {
+function Display() {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid display">
       <div className='navbar'>
           <Navbar />
       </div> 
@@ -15,4 +15,4 @@ function App() {
   )
 }
 
-export default App
+export default Display
