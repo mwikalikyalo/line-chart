@@ -32,7 +32,7 @@ const LineChart = () => {
 
 
   useEffect(() => {
-    const fetchCoins = async () => {
+    const fetchData = async () => {
       await fetch(`${proxyUrl}${baseUrl}`, {
         method: 'GET',
         headers: {
@@ -52,16 +52,16 @@ const LineChart = () => {
           console.log(error);
         });
     };
-    fetchCoins()
+    fetchData()
   }, [baseUrl, proxyUrl, apiKey])
 
   console.log("chart", chart);
 
   var data = {
-    labels: chart?.coins?.map(x => x.name),
+    labels: chart?.nasdaq?.map(x => x.name),
     datasets: [{
-      label: `${chart?.coins?.length} Closing price`,
-      data: chart?.coins?.map(x => x.price),
+      label: `${chart?.nasdaq?.length} Closing price`,
+      data: chart?.nasdaq?.map(x => x.price),
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
         'rgba(54, 162, 235, 0.2)',
