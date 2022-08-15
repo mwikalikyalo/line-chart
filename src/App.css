@@ -6,7 +6,7 @@
 
 .list{
   border: #FFFFFF;
-  padding: 10px;
+  padding: 7px;
   text-align: center;
   background-color: #FFFFFF;
   margin: 10px;
@@ -23,6 +23,7 @@
   width: 40vh;
   position: relative;
   left: -12px;
+  bottom: 3.5px;
 }
 
 .line-chart{

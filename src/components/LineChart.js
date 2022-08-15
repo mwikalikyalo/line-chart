@@ -25,7 +25,7 @@ ChartJS.register(
 
 const LineChart = () => {
   const [chart, setChart] = useState({})
-  var baseUrl = "https://data.nasdaq.com/api/v3/datatables/ETFG/FUND.json?ticker=SPY&api_key=YOURAPIKEY";
+  var baseUrl = "https://data.nasdaq.com/api/v3/datatables/ETFG/FUND.json?ticker=SPY&api_key=X3GzqBgru1BVNYbgjext";
   var proxyUrl = "https://cors-anywhere.herokuapp.com/";
   var apiKey = "X3GzqBgru1BVNYbgjext";
 
@@ -95,13 +95,16 @@ const LineChart = () => {
 
   return (
     <div>
-      <Line
-        data={data}
-        height={500}
-        width={500}
-        options={options}
+      <div className="container-fluid">
+        <h4>SVSTR</h4>
+      </div>
+        <Line
+          data={data}
+          height={500}
+          width={500}
+          options={options}
 
-      />
+        />
     </div>
   )
 }
