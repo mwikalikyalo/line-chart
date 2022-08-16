@@ -62,22 +62,22 @@ const LineChart = () => {
     datasets: [{
       label: `Closing price`,
       data: chart?.nasdaq?.map(x => x.price),
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)'
-      ],
-      borderColor: [
-        'rgba(255, 99, 132, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)'
-      ],
+      // backgroundColor: [
+      //   'rgba(255, 99, 132, 0.2)',
+      //   'rgba(54, 162, 235, 0.2)',
+      //   'rgba(255, 206, 86, 0.2)',
+      //   'rgba(75, 192, 192, 0.2)',
+      //   'rgba(153, 102, 255, 0.2)',
+      //   'rgba(255, 159, 64, 0.2)'
+      // ],
+      // borderColor: [
+      //   'rgba(255, 99, 132, 1)',
+      //   'rgba(54, 162, 235, 1)',
+      //   'rgba(255, 206, 86, 1)',
+      //   'rgba(75, 192, 192, 1)',
+      //   'rgba(153, 102, 255, 1)',
+      //   'rgba(255, 159, 64, 1)'
+      // ],
       borderWidth: 1
     }]
   };
@@ -91,13 +91,25 @@ const LineChart = () => {
         fontSize: 25,
       },
     },
+    plugins: {
+      title: {
+          display: true,
+          text: 'SVSTR',
+          position: 'top',
+          padding: {
+            top: 5,
+            bottom: 15,
+          },
+          font: {
+            size: 20,
+          },
+          color: '#51459E',
+      }
+    }
   }
 
   return (
     <div>
-      <div className="container-fluid">
-        <h4>SVSTR</h4>
-      </div>
         <Line
           data={data}
           height={500}
