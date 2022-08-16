@@ -28,6 +28,7 @@
 
 .line-chart{
   position: relative;
-  left: -25em;
-  bottom: -5em;
+  left: -2em;
+  padding: 10px;
+
 }

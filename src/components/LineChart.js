@@ -91,6 +91,7 @@ const LineChart = () => {
         fontSize: 25,
       },
     },
+    responsive: true,
     plugins: {
       title: {
           display: true,
@@ -109,13 +110,10 @@ const LineChart = () => {
   }
 
   return (
-    <div>
+    <div style={{height:"90vh", width: "140vh"}}>
         <Line
           data={data}
-          height={500}
-          width={500}
           options={options}
-
         />
     </div>
   )
