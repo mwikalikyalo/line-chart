@@ -101,6 +101,7 @@ const LineChart = () => {
             top: 5,
             bottom: 15,
           },
+          align: 'start',
           font: {
             size: 20,
           },
