@@ -25,7 +25,7 @@ ChartJS.register(
 
 const LineChart = () => {
   const [chart, setChart] = useState({})
-  var baseUrl = "https://data.nasdaq.com/api/v3/datatables/ETFG/FUND.json?ticker=SPY,IWM&api_key=YOURAPIKEY";
+  var baseUrl = "https://data.nasdaq.com/api/v3/datatables/ETFG/FUND.json?qopts.columns=ticker,date,shares_outstanding&api_key=YOURAPIKEY";
   var proxyUrl = "https://cors-anywhere.herokuapp.com/";
   var apiKey = "X3GzqBgru1BVNYbgjext";
 
@@ -41,6 +41,7 @@ const LineChart = () => {
           'Access-Control-Allow-Origin': "*"
         }
       })
+      // promise
         .then((response) => {
           if (response.ok) {
             response.json().then((json) => {
@@ -58,10 +59,10 @@ const LineChart = () => {
   console.log("chart", chart);
 
   var data = {
-    labels: chart?.nasdaq?.map(x => x.name),
+    labels: chart?.nasdaq?.map(x => x.ticker),
     datasets: [{
       label: `Closing price`,
-      data: chart?.nasdaq?.map(x => x.price),
+      data: chart?.nasdaq?.map(x => x.shares_outstanding),
       backgroundColor: [
         '##51459E',
     ],
