@@ -25,9 +25,9 @@ ChartJS.register(
 
 const LineChart = () => {
   const [chart, setChart] = useState({})
-  var baseUrl = "https://data.nasdaq.com/api/v3/datatables/ETFG/FUND.json?qopts.columns=ticker,date,shares_outstanding&api_key=YOURAPIKEY";
+  var baseUrl = "https://api.coinranking.com/v2/coins/?limit=10";
   var proxyUrl = "https://cors-anywhere.herokuapp.com/";
-  var apiKey = "X3GzqBgru1BVNYbgjext";
+  var apiKey = "coinranking880bf7d5e9527019e8d11472ed5c31bb2e106f1e6fc9ccda";
 
 
   useEffect(() => {
@@ -58,10 +58,10 @@ const LineChart = () => {
   console.log("chart", chart);
 
   var data = {
-    labels: chart?.nasdaq?.map(x => x.name),
+    labels: chart?.coins?.map(x => x.name),
     datasets: [{
-      label: `Closing price`,
-      data: chart?.nasdaq?.map(x => x.ticker),
+      label: `${chart?.coins?.length} Coins Available`,
+      data: chart?.coins?.map(x => x.price),
       backgroundColor: [
         '#51459E',
     ],
