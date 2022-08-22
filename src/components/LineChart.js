@@ -30,7 +30,6 @@ const LineChart = () => {
   var apiKey = "X3GzqBgru1BVNYbgjext";
 
 
-
   useEffect(() => {
     const fetchData = async () => {
       await fetch(`${proxyUrl}${baseUrl}`, {
@@ -59,12 +58,12 @@ const LineChart = () => {
   console.log("chart", chart);
 
   var data = {
-    labels: chart?.nasdaq?.map(x => x.ticker),
+    labels: chart?.nasdaq?.map(x => x.name),
     datasets: [{
       label: `Closing price`,
-      data: chart?.nasdaq?.map(x => x.shares_outstanding),
+      data: chart?.nasdaq?.map(x => x.ticker),
       backgroundColor: [
-        '##51459E',
+        '#51459E',
     ],
       borderWidth: 1
     }]
